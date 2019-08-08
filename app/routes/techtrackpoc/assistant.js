@@ -61,8 +61,8 @@ async function postHandler(req, res, next) {
                   "lifespanCount": 1,
                   "parameters": {
                     "productname": "iphone",
-                    "model1" : "iphoneX",
-                    "model2" : "iphone8s"
+                    "model" : "iphoneX",
+                    "mode" : "iphone8s"
                     // "models" : ["iphone X", "iphone 8s"],
                     // "product" : "sunscreen"
                   } 
