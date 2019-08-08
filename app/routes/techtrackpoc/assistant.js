@@ -11,12 +11,12 @@ async function getHandler(req, res, next) {
 }
 
 async function postHandler(req, res, next) {
-        console.log('request: ', req.body);
+        // console.log('request: ', req.body);
 
-        parameters = req.body.parameters;
-        action = req.body.action;
+        parameters = req.body.queryResult.parameters;
+        action = req.body.queryResult.intent.displayName;
 
-        console.log("reached here", req.body)
+        // console.log("reached here", req.body)
         if(action === "productname") {
           if(parameters.productName === "iphone") {
             // what is the model you look for? provide the models
