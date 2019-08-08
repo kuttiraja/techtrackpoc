@@ -36,7 +36,7 @@ async function postHandler(req, res, next) {
                   "basicCard": {
                     "title": "product model",
                     "subtitle": "",
-                    "formattedText": "models ",
+                    "formattedText": "iphoneX, iphone8s",
                       "image" : {
                               "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBphbuPuMDxxLL2seMJV30kbcMHcZLVKsufOsOIzkZgZRRJAb9",
                               "accessibilityText": "Sunny"
@@ -61,9 +61,11 @@ async function postHandler(req, res, next) {
                   "lifespanCount": 1,
                   "parameters": {
                     "productname": "iphone",
-                    "models" : ["iphone X", "iphone 8s"],
+                    "model1" : "iphoneX",
+                    "model2" : "iphone8s"
+                    // "models" : ["iphone X", "iphone 8s"],
                     // "product" : "sunscreen"
-                  }
+                  } 
                 }
               ]
               // "followupEventInput": {
