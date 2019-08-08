@@ -19,7 +19,7 @@ async function postHandler(req, res, next) {
         console.log("reached here", req.body)
         if(action === "productname") {
           if(parameters.productName === "iphone") {
-            // what is the model you look for? provide the models
+         // what is the model you look for? provide the models
             
             responseJson = {
               "fulfillmentText" : "what is the model you look for?",
@@ -63,28 +63,278 @@ async function postHandler(req, res, next) {
                     "productname": "iphone",
                     "model" : ["iphoneX", "iphone8s"],
                     "mode" : "iphone8s"
-                    // "models" : ["iphone X", "iphone 8s"],
-                    // "product" : "sunscreen"
                   } 
                 }
               ]
-              // "followupEventInput": {
-              //   "name": "product_input",
-              //   "languageCode": "en-US",
-              //   "parameters": {
-              //     "location": "param value"
-              //   }
-              // }
             }
-// }
-res.status(200).send(responseJson);
-
-
+            res.status(200).send(responseJson);
           }
           else if (parameters.productname === "samsung") {
-
+   // what is the model you look for? provide the models
+            
+   responseJson = {
+    "fulfillmentText" : "what is the model you look for?",
+    "fulfillmentMessages": [{
+      "platform": "ACTIONS_ON_GOOGLE",
+      "simpleResponses": {
+          "simpleResponses": [{
+              "textToSpeech": "what is the model you look for?"
+          }]
+      }
+  },
+      {
+        "platform": "ACTIONS_ON_GOOGLE",
+        "basicCard": {
+          "title": "product model",
+          "subtitle": "",
+          "formattedText": "galaxy, note 5",
+            "image" : {
+                    "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBphbuPuMDxxLL2seMJV30kbcMHcZLVKsufOsOIzkZgZRRJAb9",
+                    "accessibilityText": "Sunny"
+                    
+            },
+          
+          "buttons": [
+            {
+              "title": "button text",
+              "openUriAction": {
+                    "uri" : "https://google.com/"
+               }
+            }
+          ],
+          // "imageDisplayOptions": "WHITE"
+        }
+      }
+    ],
+    "outputContexts": [
+      {
+        "name": req.body.session + "/contexts/product_model",
+        "lifespanCount": 1,
+        "parameters": {
+          "productname": "samsung",
+          "model" : ["galaxy", "note5"],
+          "mode" : "galaxy"
+        } 
+      }
+    ]
+  }
+  res.status(200).send(responseJson);
           }
         }
+        else if(action === "productmodel") {
+          if(parameters.productName === "iphone" && parameters.model === "iphoneX") {
+            // memory and cost
+            
+            responseJson = {
+              "fulfillmentText" : "what is the memory you look for?",
+              "fulfillmentMessages": [{
+                "platform": "ACTIONS_ON_GOOGLE",
+                "simpleResponses": {
+                    "simpleResponses": [{
+                        "textToSpeech": "what is the memory you look for?"
+                    }]
+                }
+            },
+                {
+                  "platform": "ACTIONS_ON_GOOGLE",
+                  "basicCard": {
+                    "title": "product model",
+                    "subtitle": "",
+                    "formattedText": "32GB, 64GB",
+                      "image" : {
+                              "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBphbuPuMDxxLL2seMJV30kbcMHcZLVKsufOsOIzkZgZRRJAb9",
+                              "accessibilityText": "Sunny"
+                              
+                      },
+                    
+                    "buttons": [
+                      {
+                        "title": "button text",
+                        "openUriAction": {
+                              "uri" : "https://google.com/"
+                         }
+                      }
+                    ],
+                    // "imageDisplayOptions": "WHITE"
+                  }
+                }
+              ],
+              "outputContexts": [
+                {
+                  "name": req.body.session + "/contexts/product_memory",
+                  "lifespanCount": 1,
+                  "parameters": {
+                    "productname": "iphone",
+                    "model" : "iphoneX",
+                    "memory" : ["32GB", "64GB"]
+                  } 
+                }
+              ]
+            }
+            res.status(200).send(responseJson);
+        }
+        else if(parameters.productName === "samsung" && parameters.model === "galaxy") {
+          // memory and cost
+          
+          responseJson = {
+            "fulfillmentText" : "what is the memory you look for?",
+            "fulfillmentMessages": [{
+              "platform": "ACTIONS_ON_GOOGLE",
+              "simpleResponses": {
+                  "simpleResponses": [{
+                      "textToSpeech": "what is the memory you look for?"
+                  }]
+              }
+          },
+              {
+                "platform": "ACTIONS_ON_GOOGLE",
+                "basicCard": {
+                  "title": "product memory",
+                  "subtitle": "",
+                  "formattedText": "32GB, 64GB",
+                    "image" : {
+                            "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBphbuPuMDxxLL2seMJV30kbcMHcZLVKsufOsOIzkZgZRRJAb9",
+                            "accessibilityText": "Sunny"
+                            
+                    },
+                  
+                  "buttons": [
+                    {
+                      "title": "button text",
+                      "openUriAction": {
+                            "uri" : "https://google.com/"
+                       }
+                    }
+                  ],
+                  // "imageDisplayOptions": "WHITE"
+                }
+              }
+            ],
+            "outputContexts": [
+              {
+                "name": req.body.session + "/contexts/product_memory",
+                "lifespanCount": 1,
+                "parameters": {
+                  "productname": "samsung",
+                  "model" : "galaxy",
+                  "memory" : ["32GB", "64GB"]
+                } 
+              }
+            ]
+          }
+          res.status(200).send(responseJson);
+      }
+    }
+        else if(action === "productmemory") {
+          if(parameters.productName === "iphone" && parameters.model === "iphoneX" && parameters.memory === 32) {
+            //send the cost
+            // memory and cost
+            
+            responseJson = {
+              "fulfillmentText" : "cost for iphoneX 32Gb is $1000",
+              "fulfillmentMessages": [{
+                "platform": "ACTIONS_ON_GOOGLE",
+                "simpleResponses": {
+                    "simpleResponses": [{
+                        "textToSpeech": "cost for iphoneX 32Gb is $1000"
+                    }]
+                }
+            },
+                {
+                  "platform": "ACTIONS_ON_GOOGLE",
+                  "basicCard": {
+                    "title": "product cost",
+                    "subtitle": "",
+                    "formattedText": "cost for iphoneX 32Gb is $1000",
+                      "image" : {
+                              "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBphbuPuMDxxLL2seMJV30kbcMHcZLVKsufOsOIzkZgZRRJAb9",
+                              "accessibilityText": "Sunny"
+                              
+                      },
+                    
+                    "buttons": [
+                      {
+                        "title": "button text",
+                        "openUriAction": {
+                              "uri" : "https://google.com/"
+                         }
+                      }
+                    ],
+                    // "imageDisplayOptions": "WHITE"
+                  }
+                }
+              ],
+              "outputContexts": [
+                {
+                  "name": req.body.session + "/contexts/product_cost",
+                  "lifespanCount": 1,
+                  "parameters": {
+                    "productname": "iphone",
+                    "model" : "iphoneX",
+                    "memory" : "32GB",
+                    "cost" : "$1000"
+                  } 
+                }
+              ]
+            }
+            res.status(200).send(responseJson); 
+          }
+         
+        if(parameters.productName === "iphone" && parameters.model === "iphoneX" && parameters.memory === 32) {
+          //send the cost
+          // memory and cost
+          
+          responseJson = {
+            "fulfillmentText" : "cost for samsung galaxy 32Gb is $800",
+            "fulfillmentMessages": [{
+              "platform": "ACTIONS_ON_GOOGLE",
+              "simpleResponses": {
+                  "simpleResponses": [{
+                      "textToSpeech": "cost for samsung galaxy 32Gb is $800"
+                  }]
+              }
+          },
+              {
+                "platform": "ACTIONS_ON_GOOGLE",
+                "basicCard": {
+                  "title": "product cost",
+                  "subtitle": "",
+                  "formattedText": "cost for samsung galaxy 32Gb is $800",
+                    "image" : {
+                            "imageUri": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBphbuPuMDxxLL2seMJV30kbcMHcZLVKsufOsOIzkZgZRRJAb9",
+                            "accessibilityText": "Sunny"
+                            
+                    },
+                  
+                  "buttons": [
+                    {
+                      "title": "button text",
+                      "openUriAction": {
+                            "uri" : "https://google.com/"
+                       }
+                    }
+                  ],
+                  // "imageDisplayOptions": "WHITE"
+                }
+              }
+            ],
+            "outputContexts": [
+              {
+                "name": req.body.session + "/contexts/product_cost",
+                "lifespanCount": 1,
+                "parameters": {
+                  "productname": "samsung",
+                  "model" : "galaxy",
+                  "memory" : "32GB",
+                  "cost" : "$800"
+                } 
+              }
+            ]
+          }
+          res.status(200).send(responseJson); 
+        }
+      }
+     
         else {
         // if("product" === req.body.queryResult.action) {
                 responseJson = {
