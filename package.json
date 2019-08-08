@@ -1,5 +1,5 @@
 {
-  "name": "display-assistant",
+  "name": "techtrackpoc",
   "version": "1.0.0",
   "description": "Project to showcase NLP with Google Display",
   "main": "index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/kuttiraja/display-assistant.git"
+    "url": "https://github.com/kuttiraja/"
   },
   "author": "",
   "license": "ISC",

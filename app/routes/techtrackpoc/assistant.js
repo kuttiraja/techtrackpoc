@@ -5,8 +5,8 @@ const getWeather = require('../../utils/weather')
 const Product = require('../../utils/Product')
 
 async function getHandler(req, res, next) {
-        await calendar.upcomingEvents(req, res, next);
-        // res.send(200).send("Hello World")    
+        // await calendar.upcomingEvents(req, res, next);
+        res.send(200).send("Hello World")    
 }
 
 async function postHandler(req, res, next) {
