@@ -17,7 +17,7 @@ async function postHandler(req, res, next) {
         action = req.body.queryResult.intent.displayName;
 
         console.log("reached here", req.body)
-        if(action === "productname") {
+        if(action === "productName") {
           if(parameters.productName === "iphone") {
          // what is the model you look for? provide the models
             
@@ -60,7 +60,7 @@ async function postHandler(req, res, next) {
                   "name": req.body.session + "/contexts/product_model",
                   "lifespanCount": 1,
                   "parameters": {
-                    "productname": "iphone",
+                    "productName": "iphone",
                     "model" : ["iphoneX", "iphone8s"],
                     "mode" : "iphone8s"
                   } 
@@ -69,7 +69,7 @@ async function postHandler(req, res, next) {
             }
             res.status(200).send(responseJson);
           }
-          else if (parameters.productname === "samsung") {
+          else if (parameters.productName === "samsung") {
    // what is the model you look for? provide the models
             
    responseJson = {
@@ -111,7 +111,7 @@ async function postHandler(req, res, next) {
         "name": req.body.session + "/contexts/product_model",
         "lifespanCount": 1,
         "parameters": {
-          "productname": "samsung",
+          "productName": "samsung",
           "model" : ["galaxy", "note5"],
           "mode" : "galaxy"
         } 
@@ -164,7 +164,7 @@ async function postHandler(req, res, next) {
                   "name": req.body.session + "/contexts/product_memory",
                   "lifespanCount": 1,
                   "parameters": {
-                    "productname": "iphone",
+                    "productName": "iphone",
                     "model" : "iphoneX",
                     "memory" : ["32GB", "64GB"]
                   } 
@@ -215,7 +215,7 @@ async function postHandler(req, res, next) {
                 "name": req.body.session + "/contexts/product_memory",
                 "lifespanCount": 1,
                 "parameters": {
-                  "productname": "samsung",
+                  "productName": "samsung",
                   "model" : "galaxy",
                   "memory" : ["32GB", "64GB"]
                 } 
@@ -269,7 +269,7 @@ async function postHandler(req, res, next) {
                   "name": req.body.session + "/contexts/product_cost",
                   "lifespanCount": 1,
                   "parameters": {
-                    "productname": "iphone",
+                    "productName": "iphone",
                     "model" : "iphoneX",
                     "memory" : "32GB",
                     "cost" : "$1000"
@@ -323,7 +323,7 @@ async function postHandler(req, res, next) {
                 "name": req.body.session + "/contexts/product_cost",
                 "lifespanCount": 1,
                 "parameters": {
-                  "productname": "samsung",
+                  "productName": "samsung",
                   "model" : "galaxy",
                   "memory" : "32GB",
                   "cost" : "$800"
