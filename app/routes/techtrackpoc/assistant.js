@@ -17,8 +17,9 @@ async function postHandler(req, res, next) {
         action = req.body.action;
 
         if(action === "productname") {
-          if(parameters.productname === "iphone") {
+          if(parameters.productName === "iphone") {
             // what is the model you look for? provide the models
+            console.log("reached here", parameters)
             responseJson = {
               "fulfillmentText" : "what is the model you look for?",
               "fulfillmentMessages": [{
