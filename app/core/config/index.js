@@ -1,7 +1,7 @@
 require('dotenv').config();
 
 module.exports = {
-    APP_NAME: process.env.APP_NAME || 'tech-track-poc',
+    APP_NAME: process.env.APP_NAME || 'techtrackpoc',
     APP_HOST: process.env.APP_HOST || 'localhost',
     APP_PORT: process.env.PORT || 8080,
     DB_HOST: process.env.DB_HOST,
