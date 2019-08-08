@@ -16,7 +16,7 @@ async function postHandler(req, res, next) {
         parameters = req.body.queryResult.parameters;
         action = req.body.queryResult.intent.displayName;
 
-        // console.log("reached here", req.body)
+        console.log("reached here", req.body)
         if(action === "productname") {
           if(parameters.productName === "iphone") {
             // what is the model you look for? provide the models
@@ -61,7 +61,7 @@ async function postHandler(req, res, next) {
                   "lifespanCount": 1,
                   "parameters": {
                     "productname": "iphone",
-                    "model" : "iphoneX",
+                    "model" : ["iphoneX", "iphone8s"],
                     "mode" : "iphone8s"
                     // "models" : ["iphone X", "iphone 8s"],
                     // "product" : "sunscreen"
