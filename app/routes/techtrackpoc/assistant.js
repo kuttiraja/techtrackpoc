@@ -6,7 +6,8 @@ const Product = require('../../utils/Product')
 
 async function getHandler(req, res, next) {
         // await calendar.upcomingEvents(req, res, next);
-        res.send(200).send("Hello World")    
+        // res.sendStatus(200);
+        res.status(200).send("Hello World")    
 }
 
 async function postHandler(req, res, next) {
