@@ -122,6 +122,7 @@ async function postHandler(req, res, next) {
           }
         }
         else if(action === "productmodel") {
+          console.log("productmodel", parameters)
           if(parameters.productName === "iphone" && parameters.model === "iphoneX") {
             // memory and cost
             
@@ -174,6 +175,7 @@ async function postHandler(req, res, next) {
             res.status(200).send(responseJson);
         }
         else if(parameters.productName === "samsung" && parameters.model === "galaxy") {
+
           // memory and cost
           
           responseJson = {
@@ -280,7 +282,7 @@ async function postHandler(req, res, next) {
             res.status(200).send(responseJson); 
           }
          
-        if(parameters.productName === "iphone" && parameters.model === "iphoneX" && parameters.memory === 32) {
+        if(parameters.productName === "samsung" && parameters.model === "galaxy" && parameters.memory === 32) {
           //send the cost
           // memory and cost
           
